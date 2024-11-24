@@ -1,1 +1,4 @@
 ﻿src/.vs
+src/BuildingBlocks/BuildingBlocks/obj
+src/Services/Catalog/CatalogAPI/obj
+src/Services/Catalog/CatalogAPI/appsettings.Development.json

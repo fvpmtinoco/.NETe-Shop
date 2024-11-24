@@ -1,10 +1,39 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{50920DE6-6811-4281-91A0-F68368286C1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{E2BE4EFD-EAFD-4670-A832-BA6E5FCBF181}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogAPI", "Services\Catalog\CatalogAPI\CatalogAPI.csproj", "{E70E177D-BFF8-4227-B4B6-167DB2A84968}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{9F60E2CF-E058-47BA-9461-8B2E6195327E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks", "BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj", "{68C63567-B825-46C9-B560-5687E67AE0EF}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E70E177D-BFF8-4227-B4B6-167DB2A84968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E70E177D-BFF8-4227-B4B6-167DB2A84968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E70E177D-BFF8-4227-B4B6-167DB2A84968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E70E177D-BFF8-4227-B4B6-167DB2A84968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C63567-B825-46C9-B560-5687E67AE0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C63567-B825-46C9-B560-5687E67AE0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C63567-B825-46C9-B560-5687E67AE0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C63567-B825-46C9-B560-5687E67AE0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E2BE4EFD-EAFD-4670-A832-BA6E5FCBF181} = {50920DE6-6811-4281-91A0-F68368286C1E}
+		{E70E177D-BFF8-4227-B4B6-167DB2A84968} = {E2BE4EFD-EAFD-4670-A832-BA6E5FCBF181}
+		{68C63567-B825-46C9-B560-5687E67AE0EF} = {9F60E2CF-E058-47BA-9461-8B2E6195327E}
 	EndGlobalSection
 EndGlobal
