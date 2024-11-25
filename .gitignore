@@ -2,3 +2,5 @@
 src/BuildingBlocks/BuildingBlocks/obj
 src/Services/Catalog/CatalogAPI/obj
 src/Services/Catalog/CatalogAPI/appsettings.Development.json
+src/BuildingBlocks/BuildingBlocks/bin
+src/Services/Catalog/CatalogAPI/bin
