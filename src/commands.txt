@@ -1,0 +1,5 @@
+//
+docker ps
+
+//
+docker exec -it f28 bash 
