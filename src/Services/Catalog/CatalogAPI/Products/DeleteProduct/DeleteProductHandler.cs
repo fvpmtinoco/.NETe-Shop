@@ -1,6 +1,6 @@
 ﻿using CatalogAPI.Exceptions;
 
-namespace CatalogAPI.DeleteProduct
+namespace CatalogAPI.Products.DeleteProduct
 {
     public record DeleteProductCommand(Guid Id) : IRequest<DeleteProductResult>;
     public record DeleteProductResult(bool IsSuccess);
@@ -16,6 +16,14 @@ namespace CatalogAPI.DeleteProduct
             await documentSession.SaveChangesAsync(cancellationToken);
 
             return new DeleteProductResult(true);
+        }
+    }
+
+    public class DeleteProductCommandValidator : AbstractValidator<DeleteProductCommand>
+    {
+        public DeleteProductCommandValidator()
+        {
+            RuleFor(x => x.Id).NotEmpty().WithMessage("Id is required");
         }
     }
 }

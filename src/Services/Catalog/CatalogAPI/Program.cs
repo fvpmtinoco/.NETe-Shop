@@ -1,9 +1,12 @@
+using BuildingBlocks.Behaviors;
 using BuildingBlocks.Extensions.Carter;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var assembly = typeof(Program).Assembly;
+
 // Add services to the container
-builder.Services.AddCarterWithAssemblies(typeof(Program).Assembly);
+builder.Services.AddCarterWithAssemblies(assembly);
 builder.Services.AddMarten(opt =>
 {
     opt.Connection(builder.Configuration.GetConnectionString("Database")!);
@@ -11,7 +14,8 @@ builder.Services.AddMarten(opt =>
 
 builder.Services.AddMediatR(config =>
 {
-    config.RegisterServicesFromAssemblies(typeof(Program).Assembly);
+    config.RegisterServicesFromAssemblies(assembly);
+    config.AddOpenBehavior(typeof(ValidationBehavior<,>));
 });
 
 builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);

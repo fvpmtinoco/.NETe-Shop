@@ -1,6 +1,4 @@
-﻿
-
-namespace CatalogAPI.DeleteProduct
+﻿namespace CatalogAPI.Products.DeleteProduct
 {
     public class DeleteProductEndpoint : ICarterModule
     {
