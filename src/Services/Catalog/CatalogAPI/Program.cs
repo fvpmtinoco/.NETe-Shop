@@ -1,9 +1,10 @@
 using BuildingBlocks.Behaviors;
+using BuildingBlocks.Exceptions.Handle;
 using BuildingBlocks.Extensions.Carter;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-var assembly = typeof(Program).Assembly;
+System.Reflection.Assembly assembly = typeof(Program).Assembly;
 
 // Add services to the container
 builder.Services.AddCarterWithAssemblies(assembly);
@@ -20,9 +21,13 @@ builder.Services.AddMediatR(config =>
 
 builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 
-var app = builder.Build();
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline
 app.MapCarter();
+
+app.UseExceptionHandler(options => { });
 
 app.Run();
