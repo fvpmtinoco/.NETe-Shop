@@ -13,12 +13,10 @@ public record UpdateProductCommand(
 
 public record UpdateProductResult(bool IsSuccess);
 
-public class UpdateProductCommandHandler(IDocumentSession documentSession, ILogger<UpdateProductCommandHandler> logger) : IRequestHandler<UpdateProductCommand, UpdateProductResult>
+public class UpdateProductCommandHandler(IDocumentSession documentSession) : IRequestHandler<UpdateProductCommand, UpdateProductResult>
 {
     public async Task<UpdateProductResult> Handle(UpdateProductCommand command, CancellationToken cancellationToken)
     {
-        logger.LogInformation("UpdateProductCommandHandler.Handle called with {@command}", command);
-
         Product? product = await documentSession.LoadAsync<Product>(command.Id, cancellationToken);
 
         if (product is null)
