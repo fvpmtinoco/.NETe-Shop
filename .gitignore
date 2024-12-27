@@ -6,3 +6,5 @@ src/BuildingBlocks/BuildingBlocks/bin
 src/Services/Catalog/CatalogAPI/bin
 src/obj
 src/bin
+src/Services/Basket/BasketAPI/bin
+src/Services/Basket/BasketAPI/obj

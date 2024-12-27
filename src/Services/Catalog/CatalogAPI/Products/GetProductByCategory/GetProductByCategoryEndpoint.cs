@@ -1,8 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
-
-namespace CatalogAPI.Products.GetProductByCategory;
+﻿namespace CatalogAPI.Products.GetProductByCategory;
 
 public record GetProductByCategoryResponse(IEnumerable<Product> Products);
 
@@ -12,8 +8,8 @@ public class GetProductByCategoryEndpoint : ICarterModule
     {
         app.MapGet("/products/category/{category}", async (string category, ISender sender, CancellationToken ct) =>
         {
-            var result = await sender.Send(new GetProductByCategoryQuery(category), ct);
-            var response = result.Adapt<GetProductByCategoryResponse>();
+            GetProductByCategoryResult result = await sender.Send(new GetProductByCategoryQuery(category), ct);
+            GetProductByCategoryResponse response = result.Adapt<GetProductByCategoryResponse>();
             return Results.Ok(result);
         })
         .WithName("GetProductByCategory")
