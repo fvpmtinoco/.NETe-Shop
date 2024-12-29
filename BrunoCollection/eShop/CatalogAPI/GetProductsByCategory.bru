@@ -1,0 +1,11 @@
+meta {
+  name: GetProductsByCategory
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{catalog_url}}/products/category/c1
+  body: json
+  auth: none
+}

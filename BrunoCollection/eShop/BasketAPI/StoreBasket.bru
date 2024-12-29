@@ -1,0 +1,28 @@
+meta {
+  name: StoreBasket
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{basket_url}}/basket/test
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "Cart":
+      {
+        "Username": "test",
+        "Items": [
+          {
+            "Quantity": 2,
+            "Color": "Red",
+            "ProductId": "0193f2af-441a-4f37-8c02-ee3536ffddd8",
+            "ProductName": "Some product"
+          }
+        ]
+      }
+  }
+}

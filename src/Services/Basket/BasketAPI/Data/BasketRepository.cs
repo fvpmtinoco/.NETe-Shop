@@ -8,7 +8,7 @@ public class BasketRepository(IDocumentSession documentSession) : IBasketReposit
     public async Task<bool> DeleteBasketAsync(string username, CancellationToken cancellationToken = default)
     {
         documentSession.Delete<ShoppingCart>(username);
-        await documentSession.SaveChangesAsync();
+        await documentSession.SaveChangesAsync(cancellationToken);
         return true;
     }
 
