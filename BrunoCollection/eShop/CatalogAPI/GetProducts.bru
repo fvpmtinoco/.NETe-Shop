@@ -5,7 +5,12 @@ meta {
 }
 
 get {
-  url: {{catalog_url}}/products
+  url: {{catalog_url}}/products?pageNumber=1&pageSize=2
   body: json
   auth: none
+}
+
+params:query {
+  pageNumber: 1
+  pageSize: 2
 }
